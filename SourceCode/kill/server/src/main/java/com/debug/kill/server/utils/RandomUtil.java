@@ -42,7 +42,7 @@ public class RandomUtil {
 
 //    public static void main(String[] args) {
 //        String salt="11299c42bf954c0abb373efbae3f6b26";
-//        String password="debug";
+//        String password="123456";
 //        System.out.println(new Md5Hash(password,salt));
 //    }
 }

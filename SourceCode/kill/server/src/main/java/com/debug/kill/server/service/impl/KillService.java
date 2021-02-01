@@ -193,7 +193,7 @@ public class KillService implements IKillService {
                 } catch (Exception e) {
                     throw new Exception("还没到抢购日期、已过了抢购时间或已被抢购完毕！");
                 } finally {
-                    if (value.equals(valueOperations.get(key).toString())) {
+                    if (value.equals(valueOperations.get(key).toString())) { //release lock
                         stringRedisTemplate.delete(key);
                     }
                 }

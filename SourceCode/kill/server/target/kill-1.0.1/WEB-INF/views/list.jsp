@@ -37,7 +37,7 @@
                         <td>
                             <c:choose>
                                 <c:when test="${item.canKill==1}">
-                                    <a class="btn btn-info" href="${ctx}/item/detail/111${item.id}" target="_blank">Detail</a>
+                                    <a class="btn btn-info" href="${ctx}/item/detail/${item.id}" target="_blank">Detail</a>
                                 </c:when>
                                 <c:otherwise>
                                     <a class="btn btn-info">Sorry, item sold off or time passed</a>
