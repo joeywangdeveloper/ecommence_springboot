@@ -1,7 +1,5 @@
-package com.debug.kill.server.controller;/**
- * Created by Administrator on 2019/6/13.
- */
-
+package com.debug.kill.server.controller;
+/** Created by Administrator on 2019/6/13. */
 import com.debug.kill.api.enums.StatusCode;
 import com.debug.kill.api.response.BaseResponse;
 import org.apache.commons.lang3.StringUtils;
@@ -14,89 +12,63 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * 基础controller
- * @Author:debug (SteadyJack)
- * @Date: 2019/6/13 23:36
- **/
+/** 基础controller @Author:debug (SteadyJack) @Date: 2019/6/13 23:36 */
 @Controller
 @RequestMapping("base")
 public class BaseController {
 
-    private static final Logger log= LoggerFactory.getLogger(BaseController.class);
+  private static final Logger log = LoggerFactory.getLogger(BaseController.class);
 
-    /**
-     * 跳转页面
-     * @param name
-     * @param modelMap
-     * @return
-     */
-    @GetMapping("/welcome")
-    public String welcome(String name, ModelMap modelMap){
-        if (StringUtils.isBlank(name)){
-            name="Joey welcome you to Spring boot!";
-        }
-        modelMap.put("name",name);
-        return "welcome";
+  /**
+   * 跳转页面
+   *
+   * @param name
+   * @param modelMap
+   * @return
+   */
+  @GetMapping("/welcome")
+  public String welcome(String name, ModelMap modelMap) {
+    if (StringUtils.isBlank(name)) {
+      name = "Joey welcome you to Spring boot!";
     }
+    modelMap.put("name", name);
+    return "welcome";
+  }
 
-    /**
-     * 前端发起请求获取数据
-     * @param name
-     * @return
-     */
-    @RequestMapping(value = "/data",method = RequestMethod.GET)
-    @ResponseBody
-    public String data(String name){
-        if (StringUtils.isBlank(name)){
-            name="Welcome data!";
-        }
-        return name;
+  /**
+   * 前端发起请求获取数据
+   *
+   * @param name
+   * @return
+   */
+  @RequestMapping(value = "/data", method = RequestMethod.GET)
+  @ResponseBody
+  public String data(String name) {
+    if (StringUtils.isBlank(name)) {
+      name = "Welcome data!";
     }
+    return name;
+  }
 
-    /**
-     * 标准请求-响应数据格式
-     * @param name
-     * @return
-     */
-    @RequestMapping(value = "/response",method = RequestMethod.GET)
-    @ResponseBody
-    public BaseResponse response(String name){
-        BaseResponse response=new BaseResponse(StatusCode.Success);
-        if (StringUtils.isBlank(name)){
-            name="data response!";
-        }
-        response.setData(name);
-        return response;
+  /**
+   * 标准请求-响应数据格式
+   *
+   * @param name
+   * @return
+   */
+  @RequestMapping(value = "/response", method = RequestMethod.GET)
+  @ResponseBody
+  public BaseResponse response(String name) {
+    BaseResponse response = new BaseResponse(StatusCode.Success);
+    if (StringUtils.isBlank(name)) {
+      name = "data response!";
     }
+    response.setData(name);
+    return response;
+  }
 
-    @RequestMapping(value = "/error",method = RequestMethod.GET)
-    public String error(){
-        return "error";
-    }
-
-
+  @RequestMapping(value = "/error", method = RequestMethod.GET)
+  public String error() {
+    return "error";
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

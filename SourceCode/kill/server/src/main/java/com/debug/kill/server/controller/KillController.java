@@ -64,7 +64,7 @@ public class KillController {
         BaseResponse response = new BaseResponse(StatusCode.Success);
         try {
             //Boolean res=killService.killItem(dto.getKillId(),userId);
-            Boolean res = killService.killItem(dto.getKillId(), userId);
+            Boolean res = killService.killItemV4(dto.getKillId(), userId);
             if (!res) {
                 return new BaseResponse(StatusCode.Fail.getCode(), "Sold out or expired!");
             }

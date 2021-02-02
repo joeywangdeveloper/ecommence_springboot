@@ -2,6 +2,7 @@ package com.debug.kill.model.mapper;
 
 import com.debug.kill.model.entity.ItemKill;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
