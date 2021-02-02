@@ -28,7 +28,7 @@ public class RabbitSenderService {
 
   /** 秒杀成功异步发送邮件通知消息 */
   public void sendKillSuccessEmailMsg(String orderNo) {
-    log.info("秒杀成功异步发送邮件通知消息-准备发送消息：{}", orderNo);
+    log.info("RabbitSenderService sendKillSuccessEmailMsg：{}", orderNo);
 
     try {
       if (StringUtils.isNotBlank(orderNo)) {
