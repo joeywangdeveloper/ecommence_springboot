@@ -56,7 +56,7 @@ public class RabbitSenderService {
         }
       }
     } catch (Exception e) {
-      log.error("秒杀成功异步发送邮件通知消息-发生异常，消息为：{}", orderNo, e.fillInStackTrace());
+      log.error("RabbitMQ Error ：{}", orderNo, e.fillInStackTrace());
     }
   }
 

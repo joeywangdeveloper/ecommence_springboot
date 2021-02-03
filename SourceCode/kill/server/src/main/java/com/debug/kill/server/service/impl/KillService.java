@@ -71,7 +71,6 @@ public class KillService implements IKillService {
                 //TODO:扣减是否成功?是-生成秒杀成功的订单，同时通知用户秒杀成功的消息
                 if (res > 0) {
                     commonRecordKillSuccessInfo(itemKill, userId);
-
                     result = true;
                 }
             }

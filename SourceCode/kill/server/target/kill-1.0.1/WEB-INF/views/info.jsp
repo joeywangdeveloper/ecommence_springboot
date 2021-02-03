@@ -17,7 +17,8 @@
             <h2 class="text-danger">剩余数量：${detail.total}</h2>
         </div>
         <div class="panel-body">
-            <h2 class="text-danger">开始时间：<fmt:formatDate value="${detail.startTime}" pattern='yyyy-MM-dd HH:mm:ss'/></h2>
+            <h2 class="text-danger">开始时间：<fmt:formatDate value="${detail.startTime}"
+                                                         pattern='yyyy-MM-dd HH:mm:ss'/></h2>
         </div>
         <div class="panel-body">
             <h2 class="text-danger">结束时间：<fmt:formatDate value="${detail.endTime}" pattern='yyyy-MM-dd HH:mm:ss'/></h2>
@@ -53,13 +54,13 @@
             data: JSON.stringify(getJsonData()),
             dataType: "json",
 
-            success: function(res){
-                if (res.code==0) {
+            success: function (res) {
+                if (res.code == 0) {
                     //alert(res.msg);
-                    window.location.href="${ctx}/kill/execute/success"
-                }else{
+                    window.location.href = "${ctx}/kill/execute/success"
+                } else {
                     //alert(res.msg);
-                    window.location.href="${ctx}/kill/execute/fail"
+                    window.location.href = "${ctx}/kill/execute/fail"
                 }
             },
             error: function (message) {
@@ -70,13 +71,13 @@
     }
 
     function getJsonData() {
-        var killId=$("#killId").val();
+        var killId = $("#killId").val();
         /*var data = {
             "killId":killId,
             "userId":1
         };*/
         var data = {
-            "killId":killId
+            "killId": killId
         };
         return data;
     }
